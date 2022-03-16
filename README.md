@@ -33,7 +33,7 @@ CDN
 
 ```js
 let p;
-// can use like an native `Promise`
+// can use like a native `Promise`
 p = new MutablePromise((resolve, reject)=>setTimeout(reject,1000));
 // can get status
 console.log(p.status); // "pending"
