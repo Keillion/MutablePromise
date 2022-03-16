@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+      "target": "es6",
+      "module": "esnext",
+      //"lib": ["DOM","ES2015"],
+      //"strict": true,
+      "outDir": "dist",
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "declaration": true,
+      "declarationMap": true,
+      "declarationDir": "./types",
+      "noImplicitAny": true,
+      //"types": ["node"]
+  },
+  "include": [
+      "src/**/*.ts"
+  ],
+  "exclude": [
+      "node_modules/**"
+  ]
+}
