@@ -11,7 +11,7 @@ p = new MutablePromise((rs,rj)=>{
     }, 500);
 });
 
-p2000 = p.innerPromise = new MutablePromise((rs,rj)=>{
+p2000 = p.task = new MutablePromise((rs,rj)=>{
     setTimeout(()=>{
         rs();
         console.log(`time: 2000, p status: ${p.status}, p2000 status: ${p2000.status}`);
