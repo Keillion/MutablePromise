@@ -174,4 +174,4 @@ If a `MutablePromise` has been `fulfilled` or `rejected`, you can define a new `
 
 ## TODO
 
-Maybe need to wrap other promise function like `all`, `resolve`, `race` and so on, to `MutablePromise` version.
+Maybe need to wrap other promise function like `all`, `resolve`, `race` and so on, to `MutablePromise` edition.
