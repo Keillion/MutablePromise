@@ -43,6 +43,7 @@ class MutablePromise<T> extends Promise<T>{
             })();
         }
     }
+    get isEmpty(){ return null == this._task; }
 
     resolve: Resolve<T>
     reject: Reject;
