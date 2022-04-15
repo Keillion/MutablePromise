@@ -31,11 +31,11 @@ const MutablePromise = require('mutable-promise');
 CDN
 ```html
 <script type="module">
-    import MutablePromise from 'https://cdn.jsdelivr.net/npm/mutable-promise@1.1.7/dist/index.esm.min.js';
+    import MutablePromise from 'https://cdn.jsdelivr.net/npm/mutable-promise@1.1.8/dist/index.esm.min.js';
 </script>
 ```
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mutable-promise@1.1.7/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mutable-promise@1.1.8/dist/index.min.js"></script>
 ```
 
 ## Example

@@ -1,10 +1,10 @@
 {
   "name": "mutable-promise",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Wrapper for Promise. Resolvable, rejectable, redirectable.",
   "files": [
-    "./dist",
-    "./src"
+    "/dist",
+    "/src"
   ],
   "main": "./dist/index.js",
   "~~module": "./dist/index.mjs",
