@@ -27,60 +27,60 @@ export default async(commandLineArgs)=>{
         typescript( { tsconfig: './tsconfig.json' })
       ],
       output: [
-        // mutable-promise.mjs
+        // index.mjs
         // for rollup/webpack to compile together with other
         // or use in <script type="module">
         {
-          file: "dist/mutable-promise.mjs",
+          file: "dist/index.mjs",
           format: "es",
           exports: "default",
           sourcemap: true,
           plugins: [
             { 
-              // mutable-promise.esm.js
+              // index.esm.js
               // for rollup/webpack to compile together with other, target browser
               // same as mjs, webpack 4 don't know mjs, so current we still set esm.js as package.json->browser
 
               // https://rollupjs.org/guide/en/#writebundle
               async writeBundle(options, bundle){
-                await fs.copyFile('./dist/mutable-promise.mjs', './dist/mutable-promise.esm.js')
+                await fs.copyFile('./dist/index.mjs', './dist/index.esm.js')
               }
             },
           ],
         },
-        // mutable-promise.min.mjs
+        // index.min.mjs
         {
-          file: "dist/mutable-promise.min.mjs",
+          file: "dist/index.min.mjs",
           format: "es",
           exports: "default",
           sourcemap: true,
           plugins: [
             plugin_terser_esnext,
             { 
-              // mutable-promise.esm.js
+              // index.esm.js
               // for rollup/webpack to compile together with other, target browser
               // same as mjs, webpack 4 don't know mjs, so current we still set esm.js as package.json->browser
 
               // https://rollupjs.org/guide/en/#writebundle
               async writeBundle(options, bundle){
-                await fs.copyFile('./dist/mutable-promise.min.mjs', './dist/mutable-promise.esm.min.js')
+                await fs.copyFile('./dist/index.min.mjs', './dist/index.esm.min.js')
               }
             },
           ],
         },
-        // mutable-promise.js
+        // index.js
         // usage
-        // <script src="mutable-promise.js"
+        // <script src="index.js"
         {
-          file: "dist/mutable-promise.js",
+          file: "dist/index.js",
           format: "umd",
           name: "MutablePromise",
           exports: "default",
           sourcemap: true,
         },
-        // mutable-promise.min.js
+        // index.min.js
         {
-          file: "dist/mutable-promise.min.js",
+          file: "dist/index.min.js",
           format: "umd",
           name: "MutablePromise",
           exports: "default",
