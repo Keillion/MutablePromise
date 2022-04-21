@@ -5,7 +5,7 @@ type Executor<T> = (resolve: Resolve<T>, reject: Reject) => void;
 
 const isPromiseLike = (value:any) => (value && "object" === typeof value && "function" === typeof value.then);
 
-class MutablePromise<T>{ //extends Promise<T>{
+class MutablePromise<T> extends Promise<T>{
 
     private _s: string;
     get status(){ return this._s; }
@@ -55,11 +55,13 @@ class MutablePromise<T>{ //extends Promise<T>{
         let rs: Resolve<T>;
         let rj: Reject;
         const fn = (_rs: Resolve<T>, _rj: Reject)=>{ rs = _rs; rj = _rj; };
-        // super(fn);
+        super(fn);
 
         // walkaround babel which can not extend builtin class
-        this.then = (new Promise(fn).then);
-        
+        // let _this = this;
+        // let then = new Promise(fn).then;
+        // this.then = function(){ then.apply(_this, arguments) } as any;
+
         this._s = "pending";
         this.resolve = (value: ResolveValue<T>)=>{
             if(this.isPending){
