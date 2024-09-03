@@ -1,4 +1,4 @@
-const MutablePromise = require('../dist/mutable-promise.js');
+const MutablePromise = require('../dist/index.js');
 
 console.log('================test umd================');
 

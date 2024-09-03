@@ -1,4 +1,4 @@
-import MutablePromise from '../dist/mutable-promise.mjs';
+import MutablePromise from '../dist/index.mjs';
 
 console.log('================test esm================');
 

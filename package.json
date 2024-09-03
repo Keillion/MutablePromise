@@ -1,18 +1,22 @@
 {
   "name": "mutable-promise",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Wrapper for Promise. Resolvable, rejectable, redirectable.",
   "files": [
     "/dist",
     "/src"
   ],
   "main": "./dist/index.js",
-  "~~module": "./dist/index.mjs",
   "module": "./dist/index.esm.js",
   "exports": {
-    "~~import": "./dist/index.mjs",
-    "import": "./dist/index.esm.js",
-    "require": "./dist/index.js"
+    "import": {
+      "types":"./dist/types/index.d.ts",
+      "default":"./dist/index.esm.js"
+    },
+    "require": {
+      "types":"./dist/types/index.d.ts",
+      "default":"./dist/index.js"
+    }
   },
   "sideEffects": false,
   "types": "./dist/types/index.d.ts",
@@ -24,10 +28,10 @@
     "test": "node ./test/umd.js && node ./test/esm.mjs"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.1",
-    "rollup": "^2.70.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.3.1",
-    "typescript": "^4.6.2"
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.21.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4"
   }
 }

@@ -1,5 +1,5 @@
-import typescript from '@rollup/plugin-typescript';
-import { terser } from 'rollup-plugin-terser';
+import typescript from "@rollup/plugin-typescript";
+import terser from "@rollup/plugin-terser";
 import fs from 'fs/promises';
 
 // https://rollupjs.org/guide/en/#configuration-files
@@ -17,8 +17,8 @@ export default async(commandLineArgs)=>{
       }
     },  
   };
-  // https://stackoverflow.com/questions/57360588/how-to-use-terser-with-webpack
-  const plugin_terser_esnext = terser({ ecma: 6, format: terser_format }); // 8
+
+  const plugin_terser_es6 = terser({ ecma: 6, format: terser_format });
   
   return [
     {
@@ -55,7 +55,7 @@ export default async(commandLineArgs)=>{
           exports: "default",
           sourcemap: true,
           plugins: [
-            plugin_terser_esnext,
+            plugin_terser_es6,
             { 
               // index.esm.js
               // for rollup/webpack to compile together with other, target browser
@@ -86,7 +86,7 @@ export default async(commandLineArgs)=>{
           exports: "default",
           sourcemap: true,
           plugins: [
-            plugin_terser_esnext,
+            plugin_terser_es6,
           ],
         },
       ],
