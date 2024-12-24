@@ -4,7 +4,8 @@ type Reject = (reason?: any) => void;
 type Executor<T> = (resolve: Resolve<T>, reject: Reject) => void;
 
 const isPromiseLike = (value:any) => (value && "object" === typeof value && "function" === typeof value.then);
-
+// get original `Promise`, avoid other js change the `Promise`
+const Promise = (async()=>{})().constructor as PromiseConstructor;
 class MutablePromise<T> extends Promise<T>{
 
     private _s: string;
